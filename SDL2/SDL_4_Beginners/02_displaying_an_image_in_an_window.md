@@ -83,4 +83,4 @@ Remember those two parameters at the end of SDL_RenderCopy() that we were settin
 
 By setting dstrect (the last parameter), we can render to only a portion of the window. We set it to an SDL_Rect, with x and y set to 5, and width and height corresponding to the dimensions of the image. When we run the program, we get this:
 
-Excellent! ðŸ™‚ In this article we looked at how to create renderers, surfaces and textures. We used these to load bitmaps and display them on the screen. We also saw the difference between copying the image to a region of the window, and making it fill the entire window.
+Excellent! ‚ In this article we looked at how to create renderers, surfaces and textures. We used these to load bitmaps and display them on the screen. We also saw the difference between copying the image to a region of the window, and making it fill the entire window.
