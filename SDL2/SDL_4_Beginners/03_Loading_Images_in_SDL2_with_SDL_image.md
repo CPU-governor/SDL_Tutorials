@@ -52,3 +52,33 @@ int main(int argc, char ** argv)
 ```
 
 Now since we’ve introduced a new statically-linked library (i.e. SDL2_image.lib), the first thing we need to do is add it to the Linker -> Input in the project properties:
+
+
+Now, we’re going to load this nice photo (.jpg format) taken in Gardaland in 2006:
+
+
+Doing this is quite simple. First, we need to include the appropriate header:
+
+```c
+#include <SDL_image.h>
+```
+
+Then, we initialise SDL_image by calling IMG_Init() right after the call to SDL_Init():
+
+```c
+IMG_Init(IMG_INIT_JPG);
+```
+…and before the call to SDL_Quit(), we shut down SDL_Image using IMG_Quit():
+```c
+IMG_Quit();
+```
+All we have left to do now is replace the line calling SDL_LoadBMP() with one that uses IMG_Load() instead:
+```c
+SDL_Surface * image = IMG_Load("PICT3159.JPG");
+```
+You should now be able to run it
+And here we go:
+
+//image should be here
+
+Isn’t that sweet? The SDL_image library allows you to load a large variety of image formats, by just replacing SDL_LoadBMP() with IMG_Load(). You’ll need to initialise and cleanup the library (although it seems to work even without this) and remember to link the library and include the appropriate header file. But as you can see, it’s pretty straightforward.
